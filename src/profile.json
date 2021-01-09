@@ -1,0 +1,120 @@
+{
+  "personal": {
+    "name": "Zachary Villarreal",
+    "first_name": "Zachary",
+    "email": "zpvillarreal@gmail.com​",
+    "location": "San Diego County, California, United States",
+    "phone": "+ (818) 879-3377"
+  },
+  "professional": {
+    "title_1": "Data Analyst",
+    "title_2": "Data Scientist",
+    "techs": "NumPy, Pandas, Matplotlib, Seaborn, OpenCV, Dash, Flask, Keras, Tensorflow, SciPy, Scikit-learn, SpaCy, AWS (EC2), Unix.",
+    "main_self_introduction": "I am a data scientist drawn to using data science to help further technological advancements while utilizing past work experience to establish a unique perspective when assessing data-driven solutions. Before becoming a data scientist, I worked in the scientific research industry.",
+    "top_skills": [
+      { "percentage": 90, "skill": "Python" },
+      { "percentage": 85, "skill": "SQL" },
+      { "percentage": 85, "skill": "Data visualization" },
+      { "percentage": 80, "skill": "Machine learning" },
+      { "percentage": 80, "skill": "Deep learning" },
+      { "percentage": 75, "skill": "Dashboard building" }
+    ],
+    "languages": [
+      { "percentage": 100, "lang": "English" },
+      { "percentage": 100, "lang": "Spanish" }
+    ],
+    "links": {
+      "github": "https://github.com/ZacharyVillarreal/",
+      "linkedin": "https://www.linkedin.com/in/zachary-p-villarreal/"
+    },
+    "projects": [
+      {
+        "title": "Predicting Humans Affectively",
+        "link": "https://github.com/ZacharyVillarreal/Predicting-Humans-Affectively",
+        "time": {
+          "start": "May 2020",
+          "end": "present"
+        },
+        "description": "Emotion Predictor using both facial images and audio recordings. Constructed multiple deep learning convolutional neural network trained on audio and images predicting both emotion and sex. Provided a real-time prediction Dash Application hosted on AWS that takes in both live images and audio."
+      },
+      {
+        "title": "Customer Support Response Time Prediction",
+        "link": "https://github.com/ZacharyVillarreal/Customer-Support-Response-Time-Prediction",
+        "time": {
+          "start": "April 2020",
+          "end": "May 2020"
+        },
+        "description": "Analyzed customer support inquiries on Twitter and applied unsupervised NLP concepts to generate topics related to customer support inquiries. Developed predictive models to predict company’s response times to customer’s inquiry tweets using generated topics."
+      },
+      {
+        "title": "Google Play Store Download Analysis",
+        "link": "https://github.com/ZacharyVillarreal/Google-Play-Store-Download-Analysis",
+        "time": {
+          "start": "March 2020",
+          "end": "April 2020"
+        },
+        "description": "Analyzed and visualized application statistics from a Google Play Store dataset, ran statistical hypothesis testing to depict application behavior over various levels of success. Discovered success levels have no direct effect on the distribution of ratings an application receives."
+      }
+    ],
+    "experience": [
+      {
+        "organization": "Galvanize Inc",
+        "title": "Data Science Resident",
+        "time": {
+          "start": "September 2020",
+          "end": "present"
+        },
+        "description": "Coached Data Science Immersive students through technical assignments. Prepare and deliver lectures on python programming, machine learning, and neural network topics. Provided students actionable feedback on code readability, data analysis, and data visualization during capstone projects. Evaluated student assessments, case studies, and capstone presentations."
+      },
+      {
+        "organization": "The Scripps Research Institute",
+        "title": "Research Assistant",
+        "time": {
+          "start": "January 2018",
+          "end": "January 2019"
+        },
+        "description": "Managed and executed research projects focusing on protein-to-protein interaction in Ebola virus. Collaborated closely with postdoctoral associates to further aid and current projects."
+      },
+      {
+        "organization": "Foley Laboratory in Infection Disease Ecology",
+        "title": "Research Assistant",
+        "time": {
+          "start": "October 2016",
+          "end": "December 2017"
+        },
+        "description": "Led research projects focusing on vector-borne diseases to examine phylogeographical relationships using statistical analysis. Collaborated closely with graduate students, postdoctoral associates, and faculty. Mentored undergraduate students in conducting short term projects and learning introductory laboratory skills."
+      }
+    ],
+    "certificates": [
+      {
+        "organization": "Galvanize LA",
+        "title": "Data Science Certificate",
+        "time": {
+          "start": "March 2020",
+          "end": "June 2020"
+        },
+        "description": "A 13-week immersive bootcamp with 700+ hours of coding, weekly Case Studies, and three capstone projects. Python-based curriculum focused on machine learning and best practices in statistical analysis, including frequentist and Bayesian methods. Utilizes regression, classification, and clustering to model real-world structured and unstructured data."
+      },
+      {
+        "organization": "University of California Davis",
+        "title": "Bachelor of Science in Global Disease Biology",
+        "time": {
+          "start": "September 2015",
+          "end": "June 2018"
+        },
+        "description": "Bachelor of Science in Global Disease Biology."
+      }
+    ],
+    "volunteering":[
+        "Volunteer at Los Robles Hospital and Medical Center",
+        "Student Clinician at Vida Volunteer",
+        "Emergency Room Volunteer at Scripps Health"
+    ]
+  },
+
+  "page_elements": {
+    "greetings": "Hello, World.",
+    "navigation_button": "Learn more about me.",
+    "contact_message": "Don't hesitate to contact me."
+  }
+}

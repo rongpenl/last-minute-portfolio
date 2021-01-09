@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+
+	<!--- basic page needs
+   ================================================== -->
+	<meta charset="utf-8">
+	<title>Zachary Villarreal</title>
+	<meta name="description" content="Portfolio of {{ personal.name }}">
+	<meta name="author" content="{{ personal.name }}">
+
+	<!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+   ================================================== -->
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/vendor.css">
+
+	<!-- script
+   ================================================== -->
+	<script src="js/modernizr.js"></script>
+	<script src="js/pace.min.js"></script>
+</head>
+
+<body id="top">
+	<header>
+		<div class="row">
+
+			<div class="top-bar">
+				<a class="menu-toggle" href="#"><span>Menu</span></a>
+
+				<div class="logo">
+					<a href="index.html">{{ personal.name }}</a>
+				</div>
+
+				<nav id="main-nav-wrap">
+					<ul class="main-navigation">
+						<li class="current"><a class="smoothscroll" href="#intro" title="">Home</a></li>
+						<li><a class="smoothscroll" href="#about" title="">About</a></li>
+						<li><a class="smoothscroll" href="#work" title="">Work Experience</a></li>
+						<li><a class="smoothscroll" href="#more" title="">More</a></li>
+
+					</ul>
+				</nav>
+			</div> <!-- /top-bar -->
+
+		</div>
+	</header> <!-- /header -->
+
+	<!-- intro section
+   ================================================== -->
+	<section id="intro">
+
+		<div class="intro-overlay"></div>
+
+		<div class="intro-content">
+			<div class="row">
+
+				<div class="col-twelve">
+
+					<h5>{{ page_elements.greetings }}</h5>
+					<h1>I'm {{ personal.first_name }}.</h1>
+
+					<p class="intro-position">
+						<span> {{ professional.title_1 }}</span>
+						<span> {{ professional.title_2 }}</span>
+					</p>
+
+					<a class="button stroke smoothscroll" href="#about" title=""> {{ page_elements.navigation_button
+						}}</a>
+
+				</div>
+
+			</div>
+		</div> <!-- /intro-content -->
+
+
+
+	</section> <!-- /intro -->
+
+
+	<!-- about section
+   ================================================== -->
+	<section id="about">
+
+		<div class="row section-intro">
+			<div class="col-twelve">
+
+				<h5>About</h5>
+
+
+				<div class="intro-info">
+
+					<img src="images/headshot.jpeg" alt="Profile Picture">
+
+					<p class="lead">{{ professional.main_self_introduction }} </p>
+				</div>
+
+			</div>
+		</div> <!-- /section-intro -->
+
+		<div class="row about-content">
+
+			<div class="col-six tab-full">
+
+				<h3>Information</h3>
+
+
+				<ul class="info-list">
+					<li>
+						<strong>Name</strong>
+						<span>{{ personal.name }}</span>
+					</li>
+					<li>
+						<strong>Email:</strong>
+						<span>{{ personal.email }}</span>
+					</li>
+					<li>
+						<strong>Location:</strong>
+						<span>{{ personal.location }}</span>
+					</li>
+					<li>
+						<strong>Phone:</strong>
+						<span>{{ personal.phone }}</span>
+					</li>
+
+
+				</ul> <!-- /info-list -->
+
+			</div>
+
+			<div class="col-six tab-full">
+
+				<h3>Top skills</h3>
+				<ul class="skill-bars">
+					{% for skill_info in professional.top_skills %}
+					<li>
+						<div class="progress percent{{ skill_info.percentage }}"><span>{{ skill_info.percentage
+								}}%</span></div>
+						<strong>{{ skill_info.skill }}</strong>
+					</li>
+					{% endfor %}
+				</ul> <!-- /skill-bars -->
+
+			</div>
+
+		</div>
+
+		<div class="row button-section">
+			<div class="col-twelve">
+				<a href="{{ professional.github }}" target="_blank" title="Github link"
+					class="button button-primary">Find me on GitHub</a>
+				<a href="{{ professional.linkedin }}" target="_blank" title="LinkedIn link"
+					class="button button-primary">Find me on LinkedIn</a>
+			</div>
+		</div>
+
+	</section> <!-- /process-->
+
+
+	<!-- resume Section
+   ================================================== -->
+	<section id="work" class="grey-section">
+
+
+		<div class="row resume-timeline">
+
+			<div class="col-twelve resume-header">
+
+				<h2>Projects</h2>
+
+			</div> <!-- /resume-header -->
+
+			<div class="col-twelve">
+
+				<div class="timeline-wrap">
+					{% for project in professional.projects %}
+					<div class="timeline-block">
+						<div class="timeline-ico">
+							<i class="fa fa-paper-plane"></i>
+						</div>
+						<div class="timeline-header">
+							<h3> <a href="{{ project.link }}" target="_blank"></a>{{ project.title }}</h3>
+							<p>{{ project.time.start }} - {{ project.time.end }}</p>
+						</div>
+						<div class="timeline-content">
+							<p>{{ project.description }}</p>
+						</div>
+					</div>
+					{% endfor %}
+				</div> <!-- /timeline-wrap -->
+
+			</div> <!-- /col-twelve -->
+
+		</div> <!-- /resume-timeline -->
+
+		<div class="row resume-timeline">
+
+			<div class="col-twelve resume-header">
+
+				<h2>Professional Experience</h2>
+
+			</div> <!-- /resume-header -->
+
+			<div class="col-twelve">
+
+				<div class="timeline-wrap">
+					{% for exp in professional.experience %}
+					<div class="timeline-block">
+						<div class="timeline-ico">
+							<i class="fa fa-briefcase"></i>
+						</div>
+						<div class="timeline-header">
+							<h3> {{ exp.organization }} | {{ exp.title }}</h3>
+							<p> {{ exp.time.start }} - {{ exp.time.end }} </p>
+						</div>
+						<div class="timeline-content">
+							<p>{{ exp.description }}</p>
+						</div>
+					</div>
+					{% endfor %}
+				</div> <!-- /timeline-wrap -->
+
+			</div> <!-- /col-twelve -->
+
+		</div> <!-- /resume-timeline -->
+
+		<div class="row resume-timeline">
+
+			<div class="col-twelve resume-header">
+
+				<h2>Diploma and Certificates</h2>
+
+			</div> <!-- /resume-header -->
+
+			<div class="col-twelve">
+
+				<div class="timeline-wrap">
+					{% for cert in professional.certificates %}
+					<div class="timeline-block">
+
+						<div class="timeline-ico">
+							<i class="fa fa-graduation-cap"></i>
+						</div>
+
+						<div class="timeline-header">
+							<h3> {{ cert.title }} | {{ cert.organization }} </h3>
+							<p>{{ cert.time.start }} - {{ cert.time.end }}</p>
+						</div>
+
+						<div class="timeline-content">
+							<p>{{ cert.description }}</p>
+						</div>
+
+					</div> <!-- /timeline-block -->
+					{% endfor %}
+				</div>
+			</div> <!-- /col-twelve -->
+
+		</div> <!-- /resume-timeline -->
+
+	</section> <!-- /features -->
+
+
+	<!-- Portfolio Section
+   ================================================== -->
+
+
+
+	<!-- CTA Section
+   ================================================== -->
+
+
+	<!-- services Section
+   ================================================== -->
+	<section id="more">
+
+		<div class="overlay"></div>
+
+		<div class="row section-intro">
+			<div class="col-twelve">
+
+				<h5>More</h5>
+
+
+
+
+			</div>
+		</div> <!-- /section-intro -->
+
+		<div class="row services-content">
+
+			<div id="owl-slider" class="owl-carousel services-list">
+
+				<div class="service">
+
+					<span class="icon"><i class="icon-window"></i></span>
+
+					<div class="service-content">
+
+						<h3>Familiar libraries and technologies</h3>
+
+						<p class="desc"> {{ professional.techs }}
+						</p>
+
+					</div>
+
+				</div> <!-- /service -->
+				<div class="service">
+
+					<span class="icon"><i class="icon-earth"></i></span>
+
+					<div class="service-content">
+
+						<h3>Languages</h3>
+
+						<ul class="skill-bars">
+							{% for lang in professional.languages %}
+							<li>
+								<div class="progress percent{{ lang.percentage }}"><span>{{ lang.percentage }}%</span>
+								</div>
+								<strong>{{ lang.lang }}</strong>
+							</li>
+							{% endfor %}
+						</ul>
+
+					</div>
+				</div> <!-- /services-list -->
+
+				<div class="service">
+
+					<span class="icon"><i class="icon-chat"></i></span>
+
+					<div class="service-content">
+
+						<h3>Volunterring Experience</h3>
+
+						<ul>
+							{% for vol in professional.volunteering %}
+							<li>
+								{{ vol }}
+							</li>
+							{% endfor %}
+						</ul>
+
+					</div>
+
+				</div> <!-- /service -->
+			</div> <!-- /services-content -->
+
+	</section> <!-- /services -->
+
+
+	<!-- stats Section
+   ================================================== -->
+
+
+	<!-- contact
+   ================================================== -->
+	<section id="contact">
+
+		<div class="row section-intro">
+			<div class="col-twelve">
+
+				<h5>Contact</h5>
+				<h1>{{ page_elements.contact_message }}</h1>
+
+
+
+			</div>
+		</div> <!-- /section-intro -->
+
+		<div class="row contact-info">
+
+			<div class="col-four tab-full">
+
+				<div class="icon">
+					<i class="fa fa-linkedin""></i>
+				</div>
+
+				<h5>Find me on LinkedIn</h5>
+
+				<p>
+					<a href=" {{ professional.links.linkedin }}" target="_blank"> {{ personal.name }}</a>
+						</p>
+
+				</div>
+
+				<div class="col-four tab-full collapse">
+
+					<div class="icon">
+						<i class="fa fa-envelope-o"></i>
+					</div>
+
+					<h5>Send me an email</h5>
+
+					<p><a href="mailto:{{ personal.email }}" target="_blank">{{ personal.email }}</a>
+
+					</p>
+
+				</div>
+
+				<div class="col-four tab-full">
+
+					<div class="icon">
+						<i class="fa fa-phone-square"></i>
+					</div>
+
+					<h5>Or call me</h5>
+
+					<p>Phone:
+						{{ personal.phone }}
+
+					</p>
+
+				</div>
+
+			</div> <!-- /contact-info -->
+
+	</section> <!-- /contact -->
+
+
+	<!-- footer
+   ================================================== -->
+
+	<footer>
+		<div class="row">
+			<div class="col-six tab-full pull-right social">
+
+				<ul class="footer-social">
+
+					<li><a target="_blank" href="{{ professional.links.linkedin }}"><i class="fa fa-linkedin"></i></a>
+					</li>
+					<li><a target="_blank" href="{{ professional.links.github }}"><i class="fa fa-github"
+								aria-hidden="true"></i>
+						</a></li>
+				</ul>
+
+			</div>
+
+			<div id="go-top">
+				<a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-long-arrow-up"></i></a>
+			</div>
+
+		</div> <!-- /row -->
+	</footer>
+
+	<div id="preloader">
+		<div id="loader"></div>
+	</div>
+
+	<!-- Java Script
+   ================================================== -->
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+
+</html>
