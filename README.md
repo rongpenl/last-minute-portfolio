@@ -15,7 +15,7 @@ This is an example repository that demos how to build a portfolio using GitHub P
 No time to learn?
 
 1. Fork/copy this repository and change the repo name to `username.github.io`. For me it is `rongpenl.github.io`. (5 mins)
-2. Go to `src` directory, change the `portfolio.json` file, run the script according to its readme. (20 mins)
+2. Go to `src` directory, change the `portfolio.json` file, run the script according to its [readme](src/README.md) file. (20 mins)
 3. Replace the logos, etc in the image folder. (2 mins)
 4. Change the setting of your repo to GitHub pages (1 mins)
 5. Now you have your portfolio webpage running at `username.github.io`.
